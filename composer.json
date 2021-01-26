@@ -1,0 +1,37 @@
+{
+    "name": "leonardjke/omnipay-yoomoney",
+    "type": "library",
+    "description": "YooMoney driver for Omnipay PHP payment library",
+    "keywords": [
+        "php",
+        "omnipay",
+        "yoomoney",
+        "merchant",
+        "payment"
+    ],
+    "homepage": "https://github.com/leonardjke/omnipay-yandexmoney",
+    "license": "MIT",
+    "support": {
+        "email": "a@minedonate.ru",
+        "source": "https://github.com/leonardjke/omnipay-yandexmoney"
+    },
+    "authors": [
+        {
+            "name": "Leonard",
+            "email": "a@minedonate.ru"
+        }
+    ],
+    "require": {
+        "omnipay/common": "^3.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\YooMoney\\": "src",
+            "Omnipay\\YooMoney\\Tests\\": "tests",
+            "Omnipay\\YooMoney\\Tests\\Stubs\\": "tests/stubs"
+        }
+    }
+}
