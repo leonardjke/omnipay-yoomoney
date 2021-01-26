@@ -39,7 +39,7 @@ class Gateway extends AbstractGateway
             'receiver'      => '',
             'quickpay_form' => 'shop',
             'payment_type'  => 'PC',
-            'success_url'   => '',
+            'success_url'   => null,
             'need_fio'      => false,
             'need_email'    => false,
             'need_phone'    => false,
@@ -48,14 +48,9 @@ class Gateway extends AbstractGateway
         ];
     }
 
-    public function getAccount()
+    public function setReceiver($value)
     {
-        return $this->getReceiver();
-    }
-
-    public function setAccount($value)
-    {
-        return $this->setReceiver($value);
+        return $this->setParameter('receiver', $value);
     }
 
     public function getReceiver()
@@ -63,20 +58,8 @@ class Gateway extends AbstractGateway
         return $this->getParameter('receiver');
     }
 
-    public function setReceiver($value)
-    {
-        return $this->setParameter('receiver', $value);
-    }
-
-    public function getQuickpayForm()
-    {
-        return $this->getParameter('quickpay_form');
-    }
-
     /**
-     * Values: shop — для универсальной формы, small — для кнопки, donate — для «благотворительной» формы
-     *
-     * @param $value
+     * @param string $value shop — для универсальной формы, small — для кнопки, donate — для «благотворительной» формы
      *
      * @return Gateway
      */
@@ -85,15 +68,13 @@ class Gateway extends AbstractGateway
         return $this->setParameter('quickpay_form', $value);
     }
 
-    public function getPaymentType()
+    public function getQuickpayForm()
     {
-        return $this->getParameter('payment_type');
+        return $this->getParameter('quickpay_form');
     }
 
     /**
-     * Values: PC - оплата из кошелька ЮMoney, AC - с банковской карты, MC - с баланса мобильного
-     *
-     * @param $value
+     * @param string $value PC - оплата из кошелька ЮMoney, AC - с банковской карты, MC - с баланса мобильного
      *
      * @return Gateway
      */
@@ -102,22 +83,14 @@ class Gateway extends AbstractGateway
         return $this->setParameter('payment_type', $value);
     }
 
-    /**
-     * @param bool $needFio
-     * @param false $needEmail
-     * @param false $needPhone
-     * @param false $needAddress
-     *
-     * @return Gateway
-     */
-    public function setNeedInformation($needFio, $needEmail, $needPhone, $needAddress)
+    public function getPaymentType()
     {
-        $this->setParameter('need_fio', $needFio);
-        $this->setParameter('need_email', $needEmail);
-        $this->setParameter('need_phone', $needPhone);
-        $this->setParameter('need_address', $needAddress);
+        return $this->getParameter('payment_type');
+    }
 
-        return $this;
+    public function setSuccessUrl($value)
+    {
+        return $this->setParameter('success_url', $value);
     }
 
     public function getSuccessUrl()
@@ -125,10 +98,46 @@ class Gateway extends AbstractGateway
         return $this->getParameter('success_url');
     }
 
-    public function setSuccessUrl($value)
+    public function setNeedFio($value)
     {
-        return $this->setParameter('success_url', $value);
+        return $this->setParameter('need_fio', $value);
     }
+
+    public function getNeedFio()
+    {
+        return $this->getParameter('need_fio');
+    }
+
+    public function setNeedEmail($value)
+    {
+        return $this->setParameter('need_email', $value);
+    }
+
+    public function getNeedEmail()
+    {
+        return $this->getParameter('need_email');
+    }
+
+    public function setNeedPhone($value)
+    {
+        return $this->setParameter('need_phone', $value);
+    }
+
+    public function getNeedPhone()
+    {
+        return $this->getParameter('need_phone');
+    }
+
+    public function setNeedAddress($value)
+    {
+        return $this->setParameter('need_address', $value);
+    }
+
+    public function getNeedAddress()
+    {
+        return $this->getParameter('need_address');
+    }
+
 
     /**
      * @param array $parameters
