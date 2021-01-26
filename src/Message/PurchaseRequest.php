@@ -16,7 +16,7 @@ class PurchaseRequest extends AbstractRequest
             'paymentType'   => $this->getPaymentType(),
             'sum'           => $this->getAmount(),
             'label'         => $this->getTransactionId(),
-            'comment'       => $this->getSuccessUrl(),
+            'comment'       => $this->getDescription(),
             'need-fio'      => $this->getNeedFio(),
             'need-email'    => $this->getNeedEmail(),
             'need-phone'    => $this->getNeedPhone(),

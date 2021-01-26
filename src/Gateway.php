@@ -36,6 +36,7 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return [
+            'secret'        => '',
             'receiver'      => '',
             'quickpay_form' => 'shop',
             'payment_type'  => 'PC',
@@ -46,6 +47,16 @@ class Gateway extends AbstractGateway
             'need_address'  => false,
             'testMode'      => false,
         ];
+    }
+
+    public function setSecret($value)
+    {
+        return $this->setParameter('secret', $value);
+    }
+
+    public function getSecret()
+    {
+        return $this->getParameter('secret');
     }
 
     public function setReceiver($value)
@@ -137,7 +148,6 @@ class Gateway extends AbstractGateway
     {
         return $this->getParameter('need_address');
     }
-
 
     /**
      * @param array $parameters
