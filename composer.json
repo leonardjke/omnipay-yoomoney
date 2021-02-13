@@ -12,13 +12,13 @@
     "homepage": "https://github.com/leonardjke/omnipay-yoomoney",
     "license": "MIT",
     "support": {
-        "email": "a@minedonate.ru",
+        "email": "a@leonardjke.net",
         "source": "https://github.com/leonardjke/omnipay-yoomoney"
     },
     "authors": [
         {
             "name": "Leonard",
-            "email": "a@minedonate.ru"
+            "email": "a@leonardjke.net"
         }
     ],
     "require": {
@@ -26,7 +26,8 @@
     },
     "require-dev": {
         "omnipay/tests": "^3.0",
-        "phpunit/phpunit": "^6.5.14"
+        "phpunit/phpunit": "^6.5.14",
+        "squizlabs/php_codesniffer": "3.*"
     },
     "autoload": {
         "psr-4": {

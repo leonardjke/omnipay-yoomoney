@@ -15,15 +15,20 @@ class CompletePurchaseResponse extends AbstractResponse implements RedirectRespo
 
     public function getLabel()
     {
-        return $this->getAccount();
+        return $this->getTransactionId();
     }
 
     public function getAccount()
     {
-        return $this->data['label'];
+        return $this->getTransactionId();
     }
 
     public function getTransactionId()
+    {
+        return $this->data['label'];
+    }
+
+    public function getTransactionReference()
     {
         return $this->data['operation_id'];
     }
