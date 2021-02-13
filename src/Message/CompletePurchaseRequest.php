@@ -28,13 +28,19 @@ class CompletePurchaseRequest extends AbstractRequest
 
         return [
             'notification_type' => $this->httpRequest->get("notification_type"),
-            'operation_id'      => $this->httpRequest->get("operation_id"),
+            'bill_id'           => $this->httpRequest->get("bill_id"),
             'amount'            => $this->httpRequest->get("amount"),
+            'codepro'           => $this->httpRequest->get("codepro"),
+            'withdraw_amount'   => $this->httpRequest->get("withdraw_amount"),
+            'unaccepted'        => $this->httpRequest->get("unaccepted"),
+            'operation_id'      => $this->httpRequest->get("operation_id"),
             'currency'          => $this->httpRequest->get("currency"),
             'datetime'          => $this->httpRequest->get("datetime"),
             'sender'            => $this->httpRequest->get("sender"),
-            'codepro'           => $this->httpRequest->get("codepro"),
             'label'             => $this->httpRequest->get("label"),
+            'sha1_hash'         => $this->httpRequest->get("sha1_hash"),
+            'operation_label'   => $this->httpRequest->get("operation_label"),
+            'test_notification' => $this->httpRequest->get("test_notification"),
         ];
     }
 

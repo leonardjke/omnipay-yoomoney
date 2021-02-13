@@ -9,11 +9,11 @@
         "merchant",
         "payment"
     ],
-    "homepage": "https://github.com/leonardjke/omnipay-yandexmoney",
+    "homepage": "https://github.com/leonardjke/omnipay-yoomoney",
     "license": "MIT",
     "support": {
         "email": "a@minedonate.ru",
-        "source": "https://github.com/leonardjke/omnipay-yandexmoney"
+        "source": "https://github.com/leonardjke/omnipay-yoomoney"
     },
     "authors": [
         {
