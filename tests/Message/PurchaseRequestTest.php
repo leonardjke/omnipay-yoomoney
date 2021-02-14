@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\YooMoney\Tests\Message;
+namespace Omnipay\Yoomoney\Tests\Message;
 
 use Omnipay\Tests\TestCase;
-use Omnipay\YooMoney\Message\PurchaseRequest;
+use Omnipay\Yoomoney\Message\PurchaseRequest;
 
 class PurchaseRequestTest extends TestCase
 {
@@ -41,7 +41,6 @@ class PurchaseRequestTest extends TestCase
             'targets' => 'description',
             'paymentType' => 'PC',
             'label' => 1,
-            'comment' => 'description',
             'need-fio' => true,
             'need-email' => true,
             'need-phone' => true,

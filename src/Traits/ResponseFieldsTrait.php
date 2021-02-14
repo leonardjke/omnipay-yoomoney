@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\YooMoney\Traits;
+namespace Omnipay\Yoomoney\Traits;
 
 trait ResponseFieldsTrait
 {

@@ -22,10 +22,10 @@ $ composer require league/omnipay leonardjke/omnipay-yoomoney
 ```
 
 ## Usage
-### Create purchase
 
+### Create purchase
 ``` php 
-$gateway = Omnipay::create('YooMoney');
+$gateway = Omnipay::create('Yoomoney');
 
 $gateway->setReceiver('410011122244470');
 $gateway->setPaymentType('PC');
@@ -42,17 +42,21 @@ $response = $gateway->purchase([
 
 ###Continue purchase
 ``` php 
-$gateway = Omnipay::create('YooMoney');
+$gateway = Omnipay::create('Yoomoney');
 
 $gateway->setReceiver('410011122244470');
 $gateway->setPaymentType('PC');
 $gateway->setQuickpayForm('shop');
 $gateway->setSuccessUrl('https://example.com');
 
-$response = $gatewayManager->completePurchase($requestData)->send();
-if ($response->isSuccessful()) {
-  // successful purchase
+$response = $gatewayManager->acceptNotification();
+if (!$response->isValid()) {
+  // return error
 }
+
+$data = $response->getData();
+
+
 ```
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay) repository.

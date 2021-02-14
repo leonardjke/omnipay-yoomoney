@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\YooMoney\Message;
+namespace Omnipay\Yoomoney\Message;
 
 class PurchaseRequest extends AbstractRequest
 {

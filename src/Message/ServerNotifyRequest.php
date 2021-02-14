@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\YooMoney\Message;
+namespace Omnipay\Yoomoney\Message;
 
 use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Http\ClientInterface;
 use Omnipay\Common\Message\NotificationInterface;
-use Omnipay\YooMoney\Traits\ResponseFieldsTrait;
+use Omnipay\Yoomoney\Traits\ResponseFieldsTrait;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 class ServerNotifyRequest extends AbstractRequest implements NotificationInterface
@@ -38,6 +38,14 @@ class ServerNotifyRequest extends AbstractRequest implements NotificationInterfa
     public function isValid()
     {
         return $this->getSignature() === $this->buildSignature();
+    }
+
+    /**
+     * Alias for isValid
+     */
+    public function isSuccessful()
+    {
+        return $this->isValid();
     }
 
     private function getSignature()

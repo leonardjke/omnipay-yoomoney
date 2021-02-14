@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\YooMoney\Message;
+namespace Omnipay\Yoomoney\Message;
 
 use Omnipay\Common\Exception\InvalidResponseException;
 

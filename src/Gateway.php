@@ -8,12 +8,12 @@
  * @copyright Copyright (c) 2017, HiQDev (http://hiqdev.com/)
  */
 
-namespace Omnipay\YooMoney;
+namespace Omnipay\Yoomoney;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\YooMoney\Message\CompletePurchaseRequest;
-use Omnipay\YooMoney\Message\PurchaseRequest;
-use Omnipay\YooMoney\Message\ServerNotifyRequest;
+use Omnipay\Yoomoney\Message\CompletePurchaseRequest;
+use Omnipay\Yoomoney\Message\PurchaseRequest;
+use Omnipay\Yoomoney\Message\ServerNotifyRequest;
 
 /**
  * @method \Omnipay\Common\Message\RequestInterface authorize(array $options = [])

@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\YooMoney\Tests;
+namespace Omnipay\Yoomoney\Tests;
 
 use Omnipay\Tests\GatewayTestCase;
-use Omnipay\YooMoney\Gateway;
-use Omnipay\YooMoney\Message\CompletePurchaseRequest;
-use Omnipay\YooMoney\Message\PurchaseRequest;
+use Omnipay\Yoomoney\Gateway;
+use Omnipay\Yoomoney\Message\CompletePurchaseRequest;
+use Omnipay\Yoomoney\Message\PurchaseRequest;
 
 class GatewayTest extends GatewayTestCase
 {
