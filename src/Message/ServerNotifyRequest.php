@@ -96,5 +96,4 @@ class ServerNotifyRequest extends AbstractRequest implements NotificationInterfa
 
         return '';
     }
-
 }
