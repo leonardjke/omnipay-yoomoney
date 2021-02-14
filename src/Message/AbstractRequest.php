@@ -68,6 +68,11 @@ abstract class AbstractRequest extends OmnipayRequest
         return $this->setParameter('success_url', $value);
     }
 
+    public function setReturnUrl($value)
+    {
+        return $this->setParameter('success_url', $value);
+    }
+
     public function getSuccessUrl()
     {
         return $this->getParameter('success_url');
@@ -113,5 +118,14 @@ abstract class AbstractRequest extends OmnipayRequest
         return $this->getParameter('need_address');
     }
 
+    public function setTargets($value)
+    {
+        return $this->setParameter('targets', $value);
+    }
+
+    public function getTargets()
+    {
+        return $this->getParameter('targets');
+    }
 
 }

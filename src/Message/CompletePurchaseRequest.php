@@ -21,8 +21,7 @@ class CompletePurchaseRequest extends AbstractRequest
             $this->httpRequest->get("label"),
         ]);
 
-        if ($this->httpRequest->get("sha1_hash") != $sign)
-        {
+        if ($this->httpRequest->get("sha1_hash") != $sign) {
             throw new InvalidResponseException("Callback hash does not match expected value");
         }
 

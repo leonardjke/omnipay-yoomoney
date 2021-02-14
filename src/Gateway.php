@@ -13,9 +13,9 @@ namespace Omnipay\YooMoney;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\YooMoney\Message\CompletePurchaseRequest;
 use Omnipay\YooMoney\Message\PurchaseRequest;
+use Omnipay\YooMoney\Message\ServerNotifyRequest;
 
 /**
- * @method \Omnipay\Common\Message\NotificationInterface acceptNotification(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface authorize(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface completeAuthorize(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface capture(array $options = [])
@@ -41,6 +41,7 @@ class Gateway extends AbstractGateway
             'quickpay_form' => 'shop',
             'payment_type'  => 'PC',
             'success_url'   => null,
+            'targets'       => null,
             'need_fio'      => false,
             'need_email'    => false,
             'need_phone'    => false,
@@ -150,6 +151,21 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * @param string $value Необязательный параметр (название магазина)
+     *
+     * @return Gateway
+     */
+    public function setTargets($value)
+    {
+        return $this->setParameter('targets', $value);
+    }
+
+    public function getTargets()
+    {
+        return $this->getParameter('targets');
+    }
+
+    /**
      * @param array $parameters
      *
      * @return \Omnipay\Common\Message\AbstractRequest
@@ -160,18 +176,31 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * Use acceptNotifications
      * @param array $parameters
      *
      * @return \Omnipay\Common\Message\RequestInterface
+     * @deprecated
      */
     public function completePurchase(array $parameters = [])
     {
         return $this->createRequest(CompletePurchaseRequest::class, $parameters);
     }
 
+    /**
+     * Handle notification callback.
+     * Replaces completeAuthorize() and completePurchase()
+     *
+     * @return \Omnipay\Common\Message\AbstractRequest|ServerNotifyRequest
+     */
+    public function acceptNotification(array $parameters = array())
+    {
+        return $this->createRequest(ServerNotifyRequest::class, $parameters);
+    }
+
+
     public function __call1($name, $arguments)
     {
-        // TODO: Implement @method \Omnipay\Common\Message\NotificationInterface acceptNotification(array $options = array())
         // TODO: Implement @method \Omnipay\Common\Message\RequestInterface authorize(array $options = array())
         // TODO: Implement @method \Omnipay\Common\Message\RequestInterface completeAuthorize(array $options = array())
         // TODO: Implement @method \Omnipay\Common\Message\RequestInterface capture(array $options = array())
