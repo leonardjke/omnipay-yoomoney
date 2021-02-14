@@ -15,7 +15,7 @@ processing library for PHP 5.3+. This package implements yoomoney support for Om
 
 ## Install
 
-Instal the gateway using require. Require the `league/omnipay` base package and this gateway.
+Install the gateway using require. Require the `league/omnipay` base package and this gateway.
 
 ``` bash
 $ composer require league/omnipay leonardjke/omnipay-yoomoney
@@ -74,19 +74,11 @@ you can subscribe to.
 If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/leonardjke/omnipay-yoomoney/issues),
 or better yet, fork the library and submit a pull request.
 
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Testing
 
 ``` bash
 $ composer test
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
@@ -94,8 +86,7 @@ If you discover any security related issues, please email a@minedonate.ru instea
 
 ## Credits
 
-- [Leonard](https://github.com/leonardjke)
-- [All Contributors](../../contributors)
+- [leonardjke](https://github.com/leonardjke)
 
 ## License
 
