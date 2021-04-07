@@ -30,7 +30,7 @@ class Gateway extends AbstractGateway
 {
     public function getName()
     {
-        return 'YooMoney';
+        return 'Yoomoney';
     }
 
     public function getDefaultParameters()
