@@ -10,7 +10,7 @@ use Omnipay\Yoomoney\Message\PurchaseRequest;
 class GatewayTest extends GatewayTestCase
 {
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
