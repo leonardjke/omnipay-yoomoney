@@ -26,6 +26,14 @@ class NotificationRequest extends AbstractRequest implements NotificationInterfa
     /**
      * @inheritdoc
      */
+    public function getTransactionReference()
+    {
+        return $this->getOperationId();
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getTransactionStatus()
     {
         if (!$this->isValid())
@@ -118,14 +126,9 @@ class NotificationRequest extends AbstractRequest implements NotificationInterfa
         return $this->getDataItem('label');
     }
 
-    public function getTransactionReference()
-    {
-        return $this->getDataItem('operation_id');
-    }
-
     public function getOperationId()
     {
-        return $this->getTransactionReference();
+        return $this->getDataItem('operation_id');
     }
 
     public function getAmount()

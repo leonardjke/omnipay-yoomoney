@@ -1,4 +1,4 @@
-# Omnipay: YooMoney
+# Omnipay: Yoomoney
 
 **YooMoney driver for Omnipay PHP payment library**
 
@@ -50,12 +50,15 @@ $gateway->setQuickpayForm('shop');
 $gateway->setSuccessUrl('https://example.com');
 
 $response = $gatewayManager->acceptNotification();
+
+// Impotant! Verify hash of the request
 if (!$response->isValid()) {
   // return error
 }
 
-$data = $response->getData();
-
+$data   = $response->getData();
+$status = $response->getTransactionStatus();
+$id     = $response->getTransactionReference();
 
 ```
 
