@@ -1,7 +1,7 @@
 {
     "name": "leonardjke/omnipay-yoomoney",
     "type": "library",
-    "description": "YooMoney driver for Omnipay PHP payment library",
+    "description": "Yoomoney driver for Omnipay PHP payment library",
     "keywords": [
         "php",
         "omnipay",
