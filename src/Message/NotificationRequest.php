@@ -90,13 +90,13 @@ class NotificationRequest extends AbstractRequest implements NotificationInterfa
     private function buildSignature()
     {
         $params = [
-            $this->getDataItem('notification_type'),
-            $this->getDataItem('operation_id'),
-            $this->getDataItem('amount'),
-            $this->getDataItem('currency'),
-            $this->getDataItem('datetime'),
-            $this->getDataItem('sender'),
-            $this->getDataItem('codepro'),
+            $this->getNotificationType(),
+            $this->getOperationId(),
+            $this->getAmount(),
+            $this->getCurrency(),
+            $this->getDatetime(),
+            $this->getSender(),
+            $this->getCodePro(),
             $this->getSecret(),
             $this->getDataItem('label', ''),
         ];
