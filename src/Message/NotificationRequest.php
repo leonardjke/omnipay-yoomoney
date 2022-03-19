@@ -20,7 +20,7 @@ class NotificationRequest extends AbstractRequest implements NotificationInterfa
             return $this->data;
         }
 
-        return $this->data = $this->httpRequest->query->all();
+        return $this->data = $this->httpRequest->request->all();
     }
 
     /**
